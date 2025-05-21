@@ -1,0 +1,32 @@
+@use "sass:color";
+
+.spinner-container {
+  min-height: 300px;
+}
+
+.not-found-container {
+  padding: 16px;
+  font-size: 20px;
+  color: red;
+}
+
+.back-icon-container {
+  position: absolute;
+  top: 16px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.pi-arrow-left {
+  color: #10b981;
+  font-size: 1.5rem;
+}
+
+.pi-arrow-left:hover {
+  color: color.adjust(#10b981, $lightness: -10%);
+}
+
+h2 {
+  margin-top: 0px;
+  padding-top: 16px;
+}

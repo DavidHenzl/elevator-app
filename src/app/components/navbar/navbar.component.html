@@ -1,0 +1,46 @@
+<p-menubar [model]="items">
+  <ng-template pTemplate="start">
+    <div>
+      <div class="logo">LiftManager</div>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="end">
+    <div>
+      @if (loggedUser) {
+      <div class="flex flex-wrap-reverse justify-content-end">
+        <p-button
+          [label]="loggedUser.username"
+          variant="text"
+          size="small"
+          severity="secondary"
+          disabled
+        />
+        <p-button
+          label="Odhlásit se"
+          (click)="logout()"
+          variant="text"
+          size="small"
+        />
+      </div>
+      } @else {
+      <div
+        class="flex flex-wrap-reverse justify-content-end column-gap-2 row-gap-1"
+      >
+        <p-button
+          label="Registrace"
+          routerLink="/register"
+          variant="text"
+          size="small"
+        />
+        <p-button
+          label="Přihlásit se"
+          routerLink="/login"
+          variant="outlined"
+          [raised]="true"
+          size="small"
+        />
+      </div>
+      }
+    </div>
+  </ng-template>
+</p-menubar>

@@ -1,0 +1,25 @@
+@use "sass:color";
+
+.table-row {
+  cursor: pointer;
+}
+
+.table-row:hover {
+  background-color: lightgray;
+}
+
+.export-icon-container {
+  padding-left: 20px;
+  display: flex;
+  justify-items: center;
+}
+
+.pi-file-export {
+  color: #10b981;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.pi-file-export:hover {
+  color: color.adjust(#10b981, $lightness: -10%);
+}

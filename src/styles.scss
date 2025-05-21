@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+
+body {
+  height: 100%;
+}
+body {
+  margin: 5px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+}
+
+:root {
+  --p-progressspinner-color-one: var(--p-green-500) !important;
+  --p-progressspinner-color-two: var(--p-green-500) !important;
+  --p-progressspinner-color-three: var(--p-green-500) !important;
+  --p-progressspinner-color-four: var(--p-green-500) !important;
+}

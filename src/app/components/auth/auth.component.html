@@ -1,0 +1,35 @@
+<div class="login-container">
+  <p-card [header]="mode === 'register' ? 'Registrace' : 'Přihlášení'">
+    <form [formGroup]="authForm">
+      <div class="flex flex-column gap-2 pt-2">
+        <label for="username">Uživatelské jméno</label>
+        <input
+          pInputText
+          id="username"
+          aria-describedby="username-help"
+          formControlName="username"
+          class="mb-2"
+        />
+        <label for="password">Heslo</label>
+        <input
+          pInputText
+          id="password"
+          type="password"
+          aria-describedby="password-help"
+          formControlName="password"
+          class="mb-2"
+        />
+      </div>
+      <div *ngIf="errorText" class="error-message">
+        {{ errorText }}
+      </div>
+      <div class="pt-3 flex justify-content-center">
+        <p-button
+          [label]="mode === 'register' ? 'Registrovat' : 'Přihlásit se'"
+          (click)="mode === 'register' ? onRegister() : onLogin()"
+          [disabled]="!authForm.valid"
+        />
+      </div>
+    </form>
+  </p-card>
+</div>
