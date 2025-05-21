@@ -4,10 +4,11 @@ import { User } from './models/userModel';
 import { Subscription } from 'rxjs';
 import { UserService } from './services/user.service';
 import { RouterOutlet } from '@angular/router';
+import { ToastModule } from 'primeng/toast';
 
 @Component({
   selector: 'app-root',
-  imports: [NavbarComponent, RouterOutlet],
+  imports: [NavbarComponent, RouterOutlet, ToastModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

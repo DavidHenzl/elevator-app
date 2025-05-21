@@ -14,11 +14,9 @@ export const elevatorsDetails: ElevatorDetails[] = [
     maxPersons: 13,
     numberOfStops: 8,
     maintenanceCompany: 'LiftServis Praha s.r.o.',
-    maintenanceContact: {
-      name: 'Jan Novák',
-      phone: '+420 777 123 456',
-      email: 'servis@liftservis.cz',
-    },
+    maintenanceContactName: 'Jan Novák',
+    maintenanceContactPhone: '+420 777 123 456',
+    maintenanceContactEmail: 'servis@liftservis.cz',
     notes:
       'Výtah je v dobrém stavu, bez závad. Další servis naplánován na říjen 2025.',
   },
@@ -35,11 +33,9 @@ export const elevatorsDetails: ElevatorDetails[] = [
     maxPersons: 21,
     numberOfStops: 10,
     maintenanceCompany: 'LiftServis Hradec s.r.o.',
-    maintenanceContact: {
-      name: 'Petr Svoboda',
-      phone: '+420 777 234 567',
-      email: 'hradec@liftservis.cz',
-    },
+    maintenanceContactName: 'Petr Svoboda',
+    maintenanceContactPhone: '+420 777 234 567',
+    maintenanceContactEmail: 'hradec@liftservis.cz',
     notes: 'Výtah mimo provoz kvůli poruše motoru. Oprava probíhá.',
   },
   {
@@ -55,11 +51,9 @@ export const elevatorsDetails: ElevatorDetails[] = [
     maxPersons: 10,
     numberOfStops: 6,
     maintenanceCompany: 'KONE Servis Brno',
-    maintenanceContact: {
-      name: 'Tomáš Dvořák',
-      phone: '+420 777 345 678',
-      email: 'brno@koneservis.cz',
-    },
+    maintenanceContactName: 'Tomáš Dvořák',
+    maintenanceContactPhone: '+420 777 345 678',
+    maintenanceContactEmail: 'brno@koneservis.cz',
     notes: 'Servis naplánován na červen 2025. Výtah je dočasně odstaven.',
   },
   {
@@ -75,11 +69,9 @@ export const elevatorsDetails: ElevatorDetails[] = [
     maxPersons: 16,
     numberOfStops: 9,
     maintenanceCompany: 'TK Elevator Praha',
-    maintenanceContact: {
-      name: 'Martin Černý',
-      phone: '+420 777 456 789',
-      email: 'praha@tkelevator.cz',
-    },
+    maintenanceContactName: 'Martin Černý',
+    maintenanceContactPhone: '+420 777 456 789',
+    maintenanceContactEmail: 'praha@tkelevator.cz',
     notes: 'Evakuační výtah pravidelně testován. V pořádku.',
   },
   {
@@ -95,11 +87,9 @@ export const elevatorsDetails: ElevatorDetails[] = [
     maxPersons: 0,
     numberOfStops: 5,
     maintenanceCompany: 'Otis Ostrava',
-    maintenanceContact: {
-      name: 'Lukáš Procházka',
-      phone: '+420 777 567 890',
-      email: 'ostrava@otis.cz',
-    },
+    maintenanceContactName: 'Lukáš Procházka',
+    maintenanceContactPhone: '+420 777 567 890',
+    maintenanceContactEmail: 'ostrava@otis.cz',
     notes: 'Výtah porouchaný. Očekává se výměna součástek.',
   },
   {
@@ -115,11 +105,9 @@ export const elevatorsDetails: ElevatorDetails[] = [
     maxPersons: 13,
     numberOfStops: 7,
     maintenanceCompany: 'Schindler CZ',
-    maintenanceContact: {
-      name: 'Jakub Horák',
-      phone: '+420 777 678 901',
-      email: 'plzen@schindler.cz',
-    },
+    maintenanceContactName: 'Jakub Horák',
+    maintenanceContactPhone: '+420 777 678 901',
+    maintenanceContactEmail: 'plzen@schindler.cz',
     notes: 'Výtah prošel bezproblémovým servisem.',
   },
   {
@@ -135,11 +123,9 @@ export const elevatorsDetails: ElevatorDetails[] = [
     maxPersons: 13,
     numberOfStops: 6,
     maintenanceCompany: 'KONE Servis Brno',
-    maintenanceContact: {
-      name: 'Michal Král',
-      phone: '+420 777 789 012',
-      email: 'servis@kone.cz',
-    },
+    maintenanceContactName: 'Michal Král',
+    maintenanceContactPhone: '+420 777 789 012',
+    maintenanceContactEmail: 'servis@kone.cz',
     notes: 'Výtah je v bezvadném stavu.',
   },
   {
@@ -155,11 +141,9 @@ export const elevatorsDetails: ElevatorDetails[] = [
     maxPersons: 0,
     numberOfStops: 4,
     maintenanceCompany: 'TK Elevator CZ',
-    maintenanceContact: {
-      name: 'David Beneš',
-      phone: '+420 777 890 123',
-      email: 'brno@tke.cz',
-    },
+    maintenanceContactName: 'David Beneš',
+    maintenanceContactPhone: '+420 777 890 123',
+    maintenanceContactEmail: 'brno@tke.cz',
     notes: 'Servis naplánován na květen 2025.',
   },
   {
@@ -175,11 +159,9 @@ export const elevatorsDetails: ElevatorDetails[] = [
     maxPersons: 13,
     numberOfStops: 7,
     maintenanceCompany: 'Otis Praha',
-    maintenanceContact: {
-      name: 'Václav Fiala',
-      phone: '+420 777 901 234',
-      email: 'praha1@otis.cz',
-    },
+    maintenanceContactName: 'Václav Fiala',
+    maintenanceContactPhone: '+420 777 901 234',
+    maintenanceContactEmail: 'praha1@otis.cz',
     notes: 'Bez závad. Výtah používán denně.',
   },
   {
@@ -195,11 +177,9 @@ export const elevatorsDetails: ElevatorDetails[] = [
     maxPersons: 8,
     numberOfStops: 5,
     maintenanceCompany: 'KONE Morava',
-    maintenanceContact: {
-      name: 'Radek Sedláček',
-      phone: '+420 777 012 345',
-      email: 'olomouc@kone.cz',
-    },
+    maintenanceContactName: 'Radek Sedláček',
+    maintenanceContactPhone: '+420 777 012 345',
+    maintenanceContactEmail: 'olomouc@kone.cz',
     notes: 'Závada na dveřích. Čeká na opravu.',
   },
   {
@@ -216,11 +196,9 @@ export const elevatorsDetails: ElevatorDetails[] = [
     maxPersons: 13,
     numberOfStops: 6,
     maintenanceCompany: 'TK Elevator Jihlava',
-    maintenanceContact: {
-      name: 'Ondřej Němec',
-      phone: '+420 777 111 222',
-      email: 'jihlava@tkelevator.cz',
-    },
+    maintenanceContactName: 'Ondřej Němec',
+    maintenanceContactPhone: '+420 777 111 222',
+    maintenanceContactEmail: 'jihlava@tkelevator.cz',
     notes: 'Pravidelný servis proveden bez problémů.',
   },
   {
@@ -237,11 +215,9 @@ export const elevatorsDetails: ElevatorDetails[] = [
     maxPersons: 0,
     numberOfStops: 8,
     maintenanceCompany: 'Schindler CZ',
-    maintenanceContact: {
-      name: 'Filip Mareš',
-      phone: '+420 777 222 333',
-      email: 'usti@schindler.cz',
-    },
+    maintenanceContactName: 'Filip Mareš',
+    maintenanceContactPhone: '+420 777 222 333',
+    maintenanceContactEmail: 'usti@schindler.cz',
     notes: 'Výtah připraven pro intenzivní provoz.',
   },
   {
@@ -258,11 +234,9 @@ export const elevatorsDetails: ElevatorDetails[] = [
     maxPersons: 1,
     numberOfStops: 2,
     maintenanceCompany: 'Stannah CZ',
-    maintenanceContact: {
-      name: 'Roman Kolář',
-      phone: '+420 777 333 444',
-      email: 'liberec@stannah.cz',
-    },
+    maintenanceContactName: 'Roman Kolář',
+    maintenanceContactPhone: '+420 777 333 444',
+    maintenanceContactEmail: 'liberec@stannah.cz',
     notes: 'Plošina bude servisována v červenci 2025.',
   },
   {
@@ -279,11 +253,9 @@ export const elevatorsDetails: ElevatorDetails[] = [
     maxPersons: 13,
     numberOfStops: 5,
     maintenanceCompany: 'Otis Brno',
-    maintenanceContact: {
-      name: 'Daniel Růžička',
-      phone: '+420 777 444 555',
-      email: 'brno@otis.cz',
-    },
+    maintenanceContactName: 'Daniel Růžička',
+    maintenanceContactPhone: '+420 777 444 555',
+    maintenanceContactEmail: 'brno@otis.cz',
     notes: 'Výtah pravidelně kontrolován, vše v pořádku.',
   },
   {
@@ -300,11 +272,9 @@ export const elevatorsDetails: ElevatorDetails[] = [
     maxPersons: 15,
     numberOfStops: 7,
     maintenanceCompany: 'KONE CZ',
-    maintenanceContact: {
-      name: 'Adam Urban',
-      phone: '+420 777 555 666',
-      email: 'pardubice@kone.cz',
-    },
+    maintenanceContactName: 'Adam Urban',
+    maintenanceContactPhone: '+420 777 555 666',
+    maintenanceContactEmail: 'pardubice@kone.cz',
     notes: 'Evakuační výtah je ve výborném technickém stavu.',
   },
   {
@@ -321,11 +291,9 @@ export const elevatorsDetails: ElevatorDetails[] = [
     maxPersons: 13,
     numberOfStops: 6,
     maintenanceCompany: 'Schindler Praha',
-    maintenanceContact: {
-      name: 'Jaroslav Kříž',
-      phone: '+420 777 666 777',
-      email: 'praha2@schindler.cz',
-    },
+    maintenanceContactName: 'Jaroslav Kříž',
+    maintenanceContactPhone: '+420 777 666 777',
+    maintenanceContactEmail: 'praha2@schindler.cz',
     notes: 'Výtah mimo provoz kvůli výměně hlavního řídicího systému.',
   },
   {
@@ -342,11 +310,9 @@ export const elevatorsDetails: ElevatorDetails[] = [
     maxPersons: 0,
     numberOfStops: 12,
     maintenanceCompany: 'Otis Zlín',
-    maintenanceContact: {
-      name: 'Matěj Malý',
-      phone: '+420 777 777 888',
-      email: 'zlin@otis.cz',
-    },
+    maintenanceContactName: 'Matěj Malý',
+    maintenanceContactPhone: '+420 777 777 888',
+    maintenanceContactEmail: 'zlin@otis.cz',
     notes: 'Nákladní výtah po servisu bez připomínek.',
   },
   {
@@ -363,11 +329,9 @@ export const elevatorsDetails: ElevatorDetails[] = [
     maxPersons: 10,
     numberOfStops: 6,
     maintenanceCompany: 'KONE Plzeň',
-    maintenanceContact: {
-      name: 'Štěpán Jelínek',
-      phone: '+420 777 888 999',
-      email: 'plzen@kone.cz',
-    },
+    maintenanceContactName: 'Štěpán Jelínek',
+    maintenanceContactPhone: '+420 777 888 999',
+    maintenanceContactEmail: 'plzen@kone.cz',
     notes: 'Servis naplánován na červenec 2025.',
   },
   {
@@ -384,11 +348,9 @@ export const elevatorsDetails: ElevatorDetails[] = [
     maxPersons: 13,
     numberOfStops: 5,
     maintenanceCompany: 'TK Elevator CZ',
-    maintenanceContact: {
-      name: 'Dominik Pokorný',
-      phone: '+420 777 999 000',
-      email: 'naprikope@tke.cz',
-    },
+    maintenanceContactName: 'Dominik Pokorný',
+    maintenanceContactPhone: '+420 777 999 000',
+    maintenanceContactEmail: 'naprikope@tke.cz',
     notes: 'Výtah zkontrolován a uveden do provozu.',
   },
   {
@@ -405,11 +367,9 @@ export const elevatorsDetails: ElevatorDetails[] = [
     maxPersons: 1,
     numberOfStops: 2,
     maintenanceCompany: 'Acorn CZ',
-    maintenanceContact: {
-      name: 'Ladislav Holub',
-      phone: '+420 777 000 111',
-      email: 'opava@acorn.cz',
-    },
+    maintenanceContactName: 'Ladislav Holub',
+    maintenanceContactPhone: '+420 777 000 111',
+    maintenanceContactEmail: 'opava@acorn.cz',
     notes: 'Plošina mimo provoz – čeká na náhradní díly.',
   },
 ];

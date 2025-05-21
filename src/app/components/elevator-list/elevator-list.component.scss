@@ -8,18 +8,24 @@
   background-color: lightgray;
 }
 
-.export-icon-container {
-  padding-left: 20px;
+.icon-container {
+  padding-left: 15px;
   display: flex;
   justify-items: center;
 }
 
-.pi-file-export {
+.pi-file-export,
+.pi-file-import {
   color: #10b981;
   font-size: 1.5rem;
   cursor: pointer;
 }
 
-.pi-file-export:hover {
+.pi-file-export:hover,
+.pi-file-import:hover {
   color: color.adjust(#10b981, $lightness: -10%);
+}
+
+.spinner-container {
+  min-height: 300px;
 }

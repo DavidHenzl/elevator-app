@@ -11,10 +11,8 @@ export interface ElevatorDetails {
   maxPersons: number;
   numberOfStops: number;
   maintenanceCompany: string;
-  maintenanceContact: {
-    name: string;
-    phone: string;
-    email: string;
-  };
+  maintenanceContactName: string;
+  maintenanceContactPhone: string;
+  maintenanceContactEmail: string;
   notes: string;
 }

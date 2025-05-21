@@ -41,15 +41,14 @@
       <p><strong>Kontakt:</strong></p>
       <ul>
         <li class="mb-2">
-          <i class="pi pi-user mr-2"></i>{{ elevator.maintenanceContact.name }}
+          <i class="pi pi-user mr-2"></i>{{ elevator.maintenanceContactName }}
         </li>
         <li class="mb-2">
-          <i class="pi pi-phone mr-2"></i
-          >{{ elevator.maintenanceContact.phone }}
+          <i class="pi pi-phone mr-2"></i>{{ elevator.maintenanceContactPhone }}
         </li>
         <li>
           <i class="pi pi-envelope mr-2"></i
-          >{{ elevator.maintenanceContact.email }}
+          >{{ elevator.maintenanceContactEmail }}
         </li>
       </ul>
     </div>
@@ -59,6 +58,21 @@
     <div class="col-12">
       <p><strong>Poznámka:</strong> {{ elevator.notes }}</p>
     </div>
+    <p-button
+      label="Smazat výtah"
+      severity="danger"
+      size="small"
+      class="px-2 pb-2"
+      icon="pi pi-exclamation-triangle"
+      (click)="deleteElevator()"
+    />
+    <p-button
+      label="Export do CSV"
+      size="small"
+      class="px-2 pb-2"
+      icon="pi pi-file-export"
+      (click)="onExport()"
+    />
   </div>
   } @else if (elevator === undefined) {
   <div class="flex justify-content-center align-items-center spinner-container">

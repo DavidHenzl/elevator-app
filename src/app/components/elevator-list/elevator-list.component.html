@@ -1,80 +1,96 @@
-<div>
-  <p-table [value]="elevatorList">
-    <ng-template pTemplate="caption">
-      <div class="flex justify-content-end align-items-center">
-        <div>
-          <i class="pi pi-search" style="margin: 4px 4px 0 0"></i>
-        </div>
-        <input
-          type="text"
-          pInputText
-          size="20"
-          placeholder="Search"
-          (input)="myFilter($event)"
-          class="filter"
-          style="font-size: 14px"
-        />
-        <div class="export-icon-container">
-          <i class="pi pi-file-export" (click)="export()"></i>
-        </div>
+@if (elevatorList) {
+<p-table [value]="elevatorList">
+  <ng-template pTemplate="caption">
+    <div class="flex justify-content-end align-items-center">
+      <div>
+        <i class="pi pi-search" style="margin: 4px 4px 0 0"></i>
       </div>
-    </ng-template>
-    <ng-template #header>
-      <tr>
-        <th pSortableColumn="id">
-          <div class="flex no-wrap">
-            <div class="pr-1">Id</div>
-            <p-sortIcon field="id" />
-          </div>
-        </th>
-        <th pSortableColumn="address">
-          <div class="flex no-wrap">
-            <div class="pr-1">Adresa</div>
-            <p-sortIcon field="address" />
-          </div>
-        </th>
-        <th pSortableColumn="type">
-          <div class="flex no-wrap">
-            <div class="pr-1">Typ</div>
-            <p-sortIcon field="type" />
-          </div>
-        </th>
-        <th pSortableColumn="model">
-          <div class="flex no-wrap">
-            <div class="pr-1">Model</div>
-            <p-sortIcon field="model" />
-          </div>
-        </th>
-        <th pSortableColumn="lastService">
-          <div class="flex no-wrap">
-            <div class="pr-1">Poslední servis</div>
-            <p-sortIcon field="lastService" />
-          </div>
-        </th>
-        <th pSortableColumn="maintenance">
-          <div class="flex no-wrap">
-            <div class="pr-1">Technik</div>
-            <p-sortIcon field="maintenance" />
-          </div>
-        </th>
-        <th pSortableColumn="status">
-          <div class="flex no-wrap">
-            <div class="pr-1">Stav</div>
-            <p-sortIcon field="status" />
-          </div>
-        </th>
-      </tr>
-    </ng-template>
-    <ng-template #body let-product>
-      <tr routerLink="/elevators/{{ product.id }}" class="table-row">
-        <td>{{ product.id }}</td>
-        <td>{{ product.address }}</td>
-        <td>{{ product.type }}</td>
-        <td>{{ product.model }}</td>
-        <td>{{ product.lastService | dateFormat }}</td>
-        <td>{{ product.maintenance }}</td>
-        <td>{{ product.status }}</td>
-      </tr>
-    </ng-template>
-  </p-table>
+      <input
+        type="text"
+        pInputText
+        size="20"
+        placeholder="Search"
+        (input)="myFilter($event)"
+        class="filter"
+        style="font-size: 14px"
+      />
+      <div class="icon-container">
+        <input
+          #fileInput
+          type="file"
+          accept=".csv"
+          style="display: none"
+          (change)="onImport($event, fileInput)"
+        />
+        <i
+          class="pi pi-file-import"
+          (click)="fileInput.click()"
+          pTooltip="Import výtahu z CSV"
+          showDelay="400"
+        ></i>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #header>
+    <tr>
+      <th pSortableColumn="id">
+        <div class="flex no-wrap">
+          <div class="pr-1">Id</div>
+          <p-sortIcon field="id" />
+        </div>
+      </th>
+      <th pSortableColumn="address">
+        <div class="flex no-wrap">
+          <div class="pr-1">Adresa</div>
+          <p-sortIcon field="address" />
+        </div>
+      </th>
+      <th pSortableColumn="type">
+        <div class="flex no-wrap">
+          <div class="pr-1">Typ</div>
+          <p-sortIcon field="type" />
+        </div>
+      </th>
+      <th pSortableColumn="model">
+        <div class="flex no-wrap">
+          <div class="pr-1">Model</div>
+          <p-sortIcon field="model" />
+        </div>
+      </th>
+      <th pSortableColumn="lastService">
+        <div class="flex no-wrap">
+          <div class="pr-1">Poslední servis</div>
+          <p-sortIcon field="lastService" />
+        </div>
+      </th>
+      <th pSortableColumn="maintenance">
+        <div class="flex no-wrap">
+          <div class="pr-1">Technik</div>
+          <p-sortIcon field="maintenance" />
+        </div>
+      </th>
+      <th pSortableColumn="status">
+        <div class="flex no-wrap">
+          <div class="pr-1">Stav</div>
+          <p-sortIcon field="status" />
+        </div>
+      </th>
+    </tr>
+  </ng-template>
+  <ng-template #body let-product>
+    <tr routerLink="/elevators/{{ product.id }}" class="table-row">
+      <td>{{ product.id }}</td>
+      <td>{{ product.address }}</td>
+      <td>{{ product.type }}</td>
+      <td>{{ product.model }}</td>
+      <td>{{ product.lastService | dateFormat }}</td>
+      <td>{{ product.maintenance }}</td>
+      <td>{{ product.status }}</td>
+    </tr>
+  </ng-template>
+</p-table>
+} @else {
+<div class="flex justify-content-center align-items-center spinner-container">
+  <p-progress-spinner ariaLabel="loading" />
 </div>
+}

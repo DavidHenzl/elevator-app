@@ -7,10 +7,18 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { SkeletonModule } from 'primeng/skeleton';
 import { DateFormatPipe } from '../../pipes/date-format.pipe';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-elevator-detail',
-  imports: [CardModule, NgClass, ProgressSpinnerModule, SkeletonModule, DateFormatPipe],
+  imports: [
+    CardModule,
+    NgClass,
+    ProgressSpinnerModule,
+    SkeletonModule,
+    DateFormatPipe,
+    ButtonModule,
+  ],
   templateUrl: './elevator-detail.component.html',
   styleUrl: './elevator-detail.component.scss',
 })
@@ -34,5 +42,21 @@ export class ElevatorDetailComponent implements OnInit {
 
   goBack() {
     this.router.navigate(['../'], { relativeTo: this.route });
+  }
+
+  deleteElevator() {
+    const id: string = this.route.snapshot.params['id'];
+    if (id) {
+      this.elevatorService
+        .deleteElevator(+id)
+        .then(() => this.router.navigate(['../'], { relativeTo: this.route }));
+    }
+  }
+
+  onExport() {
+    const id: string = this.route.snapshot.params['id'];
+    if (id) {
+      this.elevatorService.export(+id);
+    }
   }
 }
