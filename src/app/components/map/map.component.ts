@@ -1,4 +1,10 @@
-import { Component, AfterViewInit, Input } from '@angular/core';
+import {
+  Component,
+  AfterViewInit,
+  Input,
+  EventEmitter,
+  Output,
+} from '@angular/core';
 import * as L from 'leaflet';
 import { ElevatorService } from '../../services/elevator.service';
 
@@ -10,6 +16,7 @@ import { ElevatorService } from '../../services/elevator.service';
 })
 export class MapComponent implements AfterViewInit {
   @Input() address!: string;
+  @Output() mapReady = new EventEmitter();
 
   private map!: L.Map;
 
@@ -47,5 +54,23 @@ export class MapComponent implements AfterViewInit {
     const { lat, lon } = coordinates;
     this.map.setView([lat, lon], 15);
     L.marker([lat, lon]).addTo(this.map);
+
+    // This part with layers is questionable - it should wait for rendering but it is probably working just because the 200 ms delay
+    let tileLayer: L.TileLayer | undefined;
+    this.map.eachLayer((layer: any) => {
+      if (layer instanceof L.TileLayer) {
+        tileLayer = layer;
+      }
+    });
+    if (tileLayer) {
+      tileLayer.once('load', () => {
+        // Wait for rendering
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            this.mapReady.emit();
+          }, 200); // slight delay after rendering
+        });
+      });
+    }
   }
 }

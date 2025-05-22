@@ -4,6 +4,7 @@ import { ElevatorDetailComponent } from './components/elevator-detail/elevator-d
 import { AuthComponent } from './components/auth/auth.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { AuthGuard } from './guards/auth.guard';
+import { MaintenanceListComponent } from './components/maintenance-list/maintenance-list.component';
 
 export const routes: Routes = [
   {
@@ -13,12 +14,23 @@ export const routes: Routes = [
   {
     path: 'elevators',
     component: ElevatorListComponent,
-    // canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'maintenance',
+    component: MaintenanceListComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'elevators/:id',
     component: ElevatorDetailComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'elevators/:id/print',
+    component: ElevatorDetailComponent,
+    canActivate: [AuthGuard],
+    data: { print: true },
   },
   {
     path: 'login',

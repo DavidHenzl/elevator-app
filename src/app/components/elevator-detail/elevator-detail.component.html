@@ -1,5 +1,5 @@
 <div class="mx-2 relative">
-  <div class="back-icon-container">
+  <div *ngIf="!printMode" class="back-icon-container">
     <i class="pi pi-arrow-left" (click)="goBack()"></i>
   </div>
   @if (elevator) {
@@ -55,27 +55,34 @@
     </div>
 
     <div class="col-12 md:col-4" *ngIf="elevator.address">
-      <app-map [address]="elevator.address" />
+      <app-map [address]="elevator.address" (mapReady)="onMapReady()" />
     </div>
 
     <div class="col-12">
       <p><strong>Poznámka:</strong> {{ elevator.notes }}</p>
     </div>
-    <p-button
-      label="Smazat výtah"
-      severity="danger"
-      size="small"
-      class="px-2 pb-2"
-      icon="pi pi-exclamation-triangle"
-      (click)="deleteElevator()"
-    />
-    <p-button
-      label="Export do CSV"
-      size="small"
-      class="px-2 pb-2"
-      icon="pi pi-file-export"
-      (click)="onExport()"
-    />
+    <div *ngIf="!printMode" class="flex col-12 gap-2">
+      <p-button
+        *ngIf="loggedUser?.role === 'admin'"
+        label="Smazat výtah"
+        severity="danger"
+        size="small"
+        icon="pi pi-exclamation-triangle"
+        (click)="deleteElevator()"
+      />
+      <p-button
+        label="Export CSV"
+        size="small"
+        icon="pi pi-file-export"
+        (click)="onExport()"
+      />
+      <p-button
+        label="Tisk PDF"
+        size="small"
+        icon="pi pi-print"
+        (click)="onPrint()"
+      />
+    </div>
   </div>
   } @else if (elevator === undefined) {
   <div class="flex justify-content-center align-items-center spinner-container">

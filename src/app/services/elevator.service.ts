@@ -110,7 +110,6 @@ export class ElevatorService {
         if (data.length > 0) {
           const lat = +data[0].lat;
           const lon = +data[0].lon;
-          console.log('ss');
 
           return { lat, lon };
         } else {

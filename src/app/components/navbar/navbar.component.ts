@@ -43,6 +43,7 @@ export class NavbarComponent implements OnInit {
       },
       {
         label: 'Seznam techniků',
+        routerLink: '/maintenance',
         visible: this.loggedUser?.role === Role.ADMIN,
       },
     ];

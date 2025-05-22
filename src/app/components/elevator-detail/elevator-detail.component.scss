@@ -30,3 +30,20 @@ h2 {
   margin-top: 0px;
   padding-top: 16px;
 }
+
+@media print {
+  .grid {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+  }
+  /* Columns take equal space side-by-side */
+  .col-12.md\:col-4 {
+    flex: 0 0 33.3333% !important;
+    max-width: 33.3333% !important;
+  }
+  
+  /* Optional: hide buttons on print */
+  .no-print, p-button {
+    display: none !important;
+  }
+}
