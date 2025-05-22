@@ -1,4 +1,4 @@
-import { NgClass } from '@angular/common';
+import { CommonModule, NgClass } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ElevatorDetails } from '../../models/elevatorDetailModel';
 import { CardModule } from 'primeng/card';
@@ -8,16 +8,19 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { SkeletonModule } from 'primeng/skeleton';
 import { DateFormatPipe } from '../../pipes/date-format.pipe';
 import { ButtonModule } from 'primeng/button';
+import { MapComponent } from '../map/map.component';
 
 @Component({
   selector: 'app-elevator-detail',
   imports: [
+    CommonModule,
     CardModule,
     NgClass,
     ProgressSpinnerModule,
     SkeletonModule,
     DateFormatPipe,
     ButtonModule,
+    MapComponent,
   ],
   templateUrl: './elevator-detail.component.html',
   styleUrl: './elevator-detail.component.scss',

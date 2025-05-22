@@ -7,6 +7,7 @@
   <hr />
   <div class="grid">
     <div class="col-12 md:col-4">
+      <p><strong>Číslo výtahu:</strong> {{ elevator.id }}</p>
       <p><strong>Adresa:</strong> {{ elevator.address }}</p>
       <p><strong>Typ:</strong> {{ elevator.type }}</p>
       <p><strong>Model:</strong> {{ elevator.model }}</p>
@@ -53,7 +54,9 @@
       </ul>
     </div>
 
-    <div class="col-12 md:col-4">TBD: MAP</div>
+    <div class="col-12 md:col-4" *ngIf="elevator.address">
+      <app-map [address]="elevator.address" />
+    </div>
 
     <div class="col-12">
       <p><strong>Poznámka:</strong> {{ elevator.notes }}</p>

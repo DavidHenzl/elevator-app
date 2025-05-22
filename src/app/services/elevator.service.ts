@@ -96,4 +96,35 @@ export class ElevatorService {
       link.click();
     }
   }
+
+  async geocodeAndMark(
+    address: string
+  ): Promise<{ lat: number; lon: number } | null> {
+    const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(
+      address
+    )}`;
+
+    return fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.length > 0) {
+          const lat = +data[0].lat;
+          const lon = +data[0].lon;
+          console.log('ss');
+
+          return { lat, lon };
+        } else {
+          this.messageService.add({
+            severity: 'warn',
+            summary: 'Adresa nenalezena',
+            detail: 'Adresa výtahu nebyla nalezena. Zkontrolujte adresu.',
+            life: 3000,
+          });
+          return null; // Address not found
+        }
+      })
+      .catch((err) => {
+        return null;
+      });
+  }
 }
